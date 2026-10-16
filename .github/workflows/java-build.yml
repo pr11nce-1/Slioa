@@ -1,0 +1,22 @@
+name: Java build
+on:
+  push:
+    branches: [main, java-opengauss-v2]
+  pull_request:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: java-opengauss
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+          cache-dependency-path: java-opengauss/pom.xml
+      - name: Build Spring Boot application
+        run: mvn --batch-mode --no-transfer-progress -DskipTests package
