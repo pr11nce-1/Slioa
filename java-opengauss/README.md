@@ -2,6 +2,8 @@
 
 > V2.0 · 软件工程课程项目原型
 
+![Slioa V2 园区仪表盘预览](./preview.svg)
+
 将旧版 Python/SQLite 原型重构为 **Java 21 + Spring Boot + openGauss + 原生 HTML/CSS/JavaScript**。前端采用苹果产品官网式的视觉取向：充足留白、浅灰层次、轻边框、圆角面板、细腻的蓝色点缀与克制的信息密度，不依赖 React/Vue 或远程字体。
 
 ## 功能范围
