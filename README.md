@@ -12,6 +12,10 @@
 
 V2 目录说明与启动指南：[`java-opengauss/README.md`](./java-opengauss/README.md)
 
+### 页面预览
+
+![Slioa Java + openGauss 页面预览](./java-opengauss/preview.svg)
+
 ### 核心能力
 园区概览、设备目录与筛选、环境温度趋势、告警确认、遥测记录查询、操作日志、演示控制命令记录，以及 openGauss 持久化数据表和首次启动演示数据。
 
