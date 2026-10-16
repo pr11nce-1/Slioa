@@ -1,0 +1,22 @@
+server:
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: always
+spring:
+  application:
+    name: slioa-smart-campus
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${SPRING_DATASOURCE_USERNAME:gaussdb}
+    password: ${SPRING_DATASOURCE_PASSWORD:CampusDb@2026}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 10000
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+logging:
+  level:
+    com.slioa.campus: INFO
