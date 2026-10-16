@@ -1,0 +1,37 @@
+services:
+  opengauss:
+    image: opengauss/opengauss-server:latest
+    container_name: slioa-opengauss
+    restart: unless-stopped
+    privileged: true
+    environment:
+      GS_USERNAME: ${OPENGAUSS_USER:-gaussdb}
+      GS_PASSWORD: ${OPENGAUSS_PASSWORD:-CampusDb@2026}
+    ports:
+      - "5432:5432"
+    volumes:
+      - opengauss-data:/var/lib/opengauss/data
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c '</dev/tcp/127.0.0.1/5432'"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 40s
+
+  app:
+    build: .
+    container_name: slioa-campus-app
+    restart: unless-stopped
+    depends_on:
+      opengauss:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://opengauss:5432/postgres
+      SPRING_DATASOURCE_USERNAME: ${OPENGAUSS_USER:-gaussdb}
+      SPRING_DATASOURCE_PASSWORD: ${OPENGAUSS_PASSWORD:-CampusDb@2026}
+      SERVER_PORT: 8080
+    ports:
+      - "8080:8080"
+
+volumes:
+  opengauss-data:
