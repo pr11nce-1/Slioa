@@ -5,7 +5,7 @@
 ## V2（推荐）
 - **后端：** Java 21 + Spring Boot 3.4 + Spring JDBC
 - **数据库：** openGauss，使用 PostgreSQL JDBC 驱动
-- **前端：** 原生 HTML / CSS / JavaScript，苹果产品官网风格的简约、留白与蓝色强调
+- **前端：** 原生 HTML / CSS / JavaScript
 - **启动：** 进入 `java-opengauss/`，复制 `.env.example` 为 `.env`，运行 `docker compose up --build -d`
 - **Web：** http://localhost:8080
 - **健康检查：** http://localhost:8080/api/health
