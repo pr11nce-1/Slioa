@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f8"><meta name="description" content="Slioa 智慧园区设备协同监控与管理平台">
+  <title>Slioa · 智慧园区</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="Slioa 首页">
+      <span class="brand-mark"><svg viewBox="0 0 42 42" aria-hidden="true"><path d="M21 3.5 37 12.7v16.6L21 38.5 5 29.3V12.7Z" fill="currentColor" opacity=".13"/><path d="M21 8.5 32.5 15v12L21 33.5 9.5 27V15Z" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="21" cy="21" r="4.2" fill="currentColor"/><path d="M21 2v8M40 21h-8M21 40v-8M2 21h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+      <span class="brand-copy"><strong>Slioa</strong><small>SMART CAMPUS</small></span>
+    </a>
+    <div class="workspace-label">工作空间</div>
+    <nav class="primary-nav" aria-label="主导航">
+      <button class="nav-item active" data-view="overview"><span class="nav-icon">▦</span><span>园区概览</span><span class="nav-chevron">⌘1</span></button>
+      <button class="nav-item" data-view="devices"><span class="nav-icon">◫</span><span>设备中心</span><span class="nav-count" id="nav-device-count">8</span></button>
+      <button class="nav-item" data-view="alarms"><span class="nav-icon">♧</span><span>告警事件</span><span class="nav-count warning-count" id="nav-alarm-count">2</span></button>
+      <button class="nav-item" data-view="analytics"><span class="nav-icon">⌁</span><span>数据分析</span></button>
+    </nav>
+    <div class="sidebar-spacer"></div>
+    <div class="connection-card"><span class="connection-dot"></span><div><strong>系统连接正常</strong><small>openGauss 数据服务</small></div><span class="connection-pulse"></span></div>
+    <button class="nav-item settings-item" data-view="settings"><span class="nav-icon">⚙</span><span>系统设置</span></button>
+    <div class="profile">
+      <div class="avatar">林</div><div class="profile-copy"><strong>林管理员</strong><small>系统管理员</small></div><button class="more-button" aria-label="更多选项">···</button>
+    </div>
+  </aside>
+
+  <main class="main-area">
+    <header class="topbar">
+      <div class="breadcrumb"><span>园区管理</span><span class="crumb-divider">/</span><strong id="breadcrumb-current">园区概览</strong></div>
+      <div class="topbar-actions"><span class="live-indicator"><i></i> 实时更新</span><button class="icon-button" id="refresh-button" aria-label="刷新数据" title="刷新数据">↻</button><button class="help-button" id="help-button">帮助中心 <span>↗</span></button></div>
+    </header>
+
+    <section class="page-content" id="view-overview">
+      <div class="page-heading"><div><p class="eyebrow">FRIDAY, OCTOBER 16, 2026</p><h1>园区概览<span class="title-period">.</span></h1><p class="page-subtitle">所有设备都在有序运转。这里是园区运行的实时视图。</p></div><div class="heading-meta"><span class="healthy-badge"><i></i> 运行良好</span><span class="last-update">上次同步 <strong id="last-sync">刚刚</strong></span></div></div>
+
+      <section class="welcome-panel" aria-label="园区状态总览">
+        <div class="welcome-content"><div class="welcome-kicker"><span class="sparkle">✳</span> CAMPUS OVERVIEW</div><h2>让每一处空间，<br><em>都有迹可循。</em></h2><p>设备、环境与能源数据已汇集到一个视图。<br>运行状态一目了然，问题能够及时发现。</p><div class="welcome-footer"><span class="welcome-chip"><i></i> 数据服务已连接</span><span class="welcome-divider"></span><span class="welcome-caption">统一监控 · 智能协同 · 安心运维</span></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="hero-core"><svg viewBox="0 0 130 130"><defs><linearGradient id="coreGrad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#78b8ff"/><stop offset="1" stop-color="#246fe5"/></linearGradient></defs><path d="M65 10 112 37v56l-47 27L18 93V37Z" fill="url(#coreGrad)"/><path d="M65 27 96 45v37L65 100 34 82V45Z" fill="none" stroke="white" stroke-opacity=".75" stroke-width="2.5"/><path d="m45 65 13 13 28-31" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="art-node node-a"><i>⌁</i><b>环境</b></span><span class="art-node node-b"><i>◉</i><b>设备</b></span><span class="art-node node-c"><i>ϟ</i><b>能源</b></span><span class="art-node node-d"><i>⌑</i><b>门禁</b></span><span class="art-spark spark-a">✦</span><span class="art-spark spark-b">✳</span></div>
+        <div class="panel-corner">01 <span>/</span> 04</div>
+      </section>
+
+      <section class="metric-grid" aria-label="关键指标">
+        <article class="metric-card"><div class="metric-top"><span>接入设备</span><span class="metric-symbol blue">◫</span></div><div class="metric-value"><strong id="metric-total">8</strong><span class="metric-unit">台</span></div><div class="metric-foot"><span class="trend neutral">设备总量</span><span class="foot-note">持续接入中</span></div><div class="mini-bars bars-blue"><i style="height:35%"></i><i style="height:52%"></i><i style="height:40%"></i><i style="height:70%"></i><i style="height:62%"></i><i style="height:82%"></i><i style="height:76%"></i><i style="height:100%"></i></div></article>
+        <article class="metric-card"><div class="metric-top"><span>在线设备</span><span class="metric-symbol green">✓</span></div><div class="metric-value"><strong id="metric-online">6</strong><span class="metric-unit">台</span></div><div class="metric-foot"><span class="trend positive"><i>↗</i> 稳定运行</span><span class="foot-note" id="online-rate">75% 在线率</span></div><div class="progress-track"><span id="online-progress" style="width:75%"></span></div></article>
+        <article class="metric-card"><div class="metric-top"><span>待处理告警</span><span class="metric-symbol orange">!</span></div><div class="metric-value"><strong id="metric-alarms">2</strong><span class="metric-unit">项</span></div><div class="metric-foot"><span class="trend caution">需要关注</span><span class="foot-note">未确认事件</span></div><div class="alarm-sparkline"><svg viewBox="0 0 160 30" preserveAspectRatio="none"><path d="M0 23 C14 23 16 8 30 12 S47 26 62 18 S76 20 90 11 S108 17 122 8 S144 12 160 3" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></div></article>
+        <article class="metric-card"><div class="metric-top"><span>今日操作</span><span class="metric-symbol purple">⌘</span></div><div class="metric-value"><strong id="metric-operations">12</strong><span class="metric-unit">次</span></div><div class="metric-foot"><span class="trend neutral">操作记录</span><span class="foot-note">全程可追溯</span></div><div class="operation-line"><span style="width:27%"></span><span style="width:18%"></span><span style="width:35%"></span><span style="width:20%"></span></div></article>
+      </section>
+
+      <section class="insight-grid">
+        <article class="surface-card trend-card"><div class="section-heading"><div><p class="section-kicker">ENVIRONMENT</p><h3>环境趋势</h3><p>园区平均温度变化</p></div><div class="chart-controls"><span class="chart-legend"><i></i> 温度（°C）</span><button class="select-button" id="chart-range">近 24 小时 <span>⌄</span></button></div></div><div class="chart-wrap"><div class="chart-y-labels"><span>32°</span><span>28°</span><span>24°</span><span>20°</span></div><div class="chart-canvas" id="chart-canvas"><svg viewBox="0 0 640 160" preserveAspectRatio="none" class="chart-svg"><defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3988f5" stop-opacity=".18"/><stop offset="1" stop-color="#3988f5" stop-opacity="0"/></linearGradient></defs><path d="M0 102 C35 94 48 108 78 84 S130 66 160 82 S210 106 240 76 S292 60 320 64 S370 47 400 57 S450 92 480 62 S535 48 560 38 S610 34 640 22 L640 160 L0 160 Z" fill="url(#chartFill)"/><path d="M0 102 C35 94 48 108 78 84 S130 66 160 82 S210 106 240 76 S292 60 320 64 S370 47 400 57 S450 92 480 62 S535 48 560 38 S610 34 640 22" fill="none" stroke="#3988f5" stroke-width="3" stroke-linecap="round"/><circle cx="560" cy="38" r="5" fill="#fff" stroke="#3988f5" stroke-width="3"/></svg><div class="chart-x-labels"><span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>现在</span></div></div></div><div class="chart-footer"><span><i class="status-dot"></i> 数据自动汇总</span><span>每 5 分钟更新一次</span></div></article>
+
+        <article class="surface-card alarm-card"><div class="section-heading alarm-heading"><div><p class="section-kicker">NEEDS ATTENTION</p><h3>告警事件</h3><p>需要你留意的最新动态</p></div><button class="text-button" data-view="alarms">查看全部 <span>→</span></button></div><div class="alarm-list" id="alarm-list"><div class="alarm-row"><span class="alarm-icon critical">!</span><div class="alarm-copy"><strong>西门门禁失去连接</strong><span>西门门禁控制器 · 21 分钟前</span></div><span class="severity critical-text">紧急</span></div><div class="alarm-row"><span class="alarm-icon warning">⌁</span><div class="alarm-copy"><strong>三号楼温度接近阈值</strong><span>三号楼环境传感器 · 8 分钟前</span></div><span class="severity warning-text">提醒</span></div></div><div class="alarm-footer"><span><i class="footer-ring"></i><b id="alarm-footer-count">2</b> 项待确认</span><button id="ack-all-button">查看处理建议 <span>→</span></button></div></article>
+      </section>
+
+      <section class="surface-card device-card"><div class="section-heading device-heading"><div><p class="section-kicker">DEVICE DIRECTORY</p><h3>设备动态</h3><p>查看设备状态与最新采集信息</p></div><div class="device-actions"><label class="search-box"><span>⌕</span><input id="device-search" type="search" placeholder="搜索设备" aria-label="搜索设备"></label><button class="text-button" data-view="devices">全部设备 <span>→</span></button></div></div><div class="table-scroll"><table class="device-table"><thead><tr><th>设备名称</th><th>设备类型</th><th>安装位置</th><th>实时状态</th><th>最近数据</th><th></th></tr></thead><tbody id="device-table-body"><tr><td><div class="device-name-cell"><span class="device-mini-icon env">⌁</span><div><strong>一号楼环境传感器</strong><small>ENV-B1-001</small></div></div></td><td>环境监测</td><td>一号楼 · 1F 大厅</td><td><span class="device-status online"><i></i> 在线</span></td><td><strong>24.6</strong><span class="table-unit">°C</span></td><td><button class="row-more" aria-label="查看设备详情">···</button></td></tr></tbody></table></div><div class="table-footer"><span id="table-summary">显示 4 台设备</span><button class="table-next" data-view="devices">查看设备目录 <span>→</span></button></div></section>
+      <footer class="app-footer"><span>© 2026 Slioa · 智慧园区协同平台</span><span><i></i> 运行状态正常 <span class="footer-separator">·</span> Version 2.0</span></footer>
+    </section>
+    <section class="page-content alternate-view hidden" id="view-devices"></section>
+    <section class="page-content alternate-view hidden" id="view-alarms"></section>
+    <section class="page-content alternate-view hidden" id="view-analytics"></section>
+    <section class="page-content alternate-view hidden" id="view-settings"></section>
+  </main>
+</div>
+<div class="toast-region" id="toast-region" aria-live="polite"></div>
+<script src="/app.js"></script>
+</body>
+</html>
